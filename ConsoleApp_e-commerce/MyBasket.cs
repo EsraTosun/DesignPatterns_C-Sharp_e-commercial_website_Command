@@ -11,13 +11,17 @@ namespace ConsoleApp_e_commerce
         public static List<Products> myBasketList = new List<Products>();
         public static Products products = new Products();
 
+        public static MyBasket myBasket = new MyBasket();
+        public static Products transactionProduct = new Products();
 
-        public static void MyBasketAdd()
+        public static int transactionIndex;
+        public void MyBasketAdd()
         {
             Products products = new Products();
 
             products.amount = Products.productList[Customer.transactionID - 1000].amount;
             products.ID = Customer.transactionID;
+            transactionIndex = myBasketList.Count;
 
             myBasketList.Add(products);
         }
@@ -29,20 +33,25 @@ namespace ConsoleApp_e_commerce
                 Customer.DesiredID = myBasketList[i].ID;
                 products.FindingDesiredProduct();
             }
-
-            MyBasketDelete();
         }
 
-        public static void MyBasketDelete()
+        public void MyBasketDelete()
         {
             Console.WriteLine("If you want to remove it from mybasket, enter the index value");
             //Favorilerden çıkarmak isterseniz index değeri girin
             Console.WriteLine("If you do not want-enter the number -1");
-            //İstemezseniz 100 sayısını giriniz
+            //İstemezseniz -1 sayısını giriniz
             int transaction = Convert.ToInt32(Console.ReadLine());
 
             if (transaction >= 0 && transaction < MyBasket.myBasketList.Count)
-                MyBasket.myBasketList.RemoveAt(transaction);
+            {
+                transactionProduct = myBasketList[transaction];
+                myBasketList.RemoveAt(transaction);
+            }
+            else
+            {
+                throw new NotProductException();
+            }
         }
     }
 }

@@ -13,7 +13,8 @@ namespace ConsoleApp_e_commerce
         MyBasket = 3,
         Favorites = 4,
         Payment = 5,
-        Logout = 6,
+        Undo = 6,
+        Logout = 7,
     }
     class Customer:User, ICustomer  //Müşteri
     {

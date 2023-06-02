@@ -11,7 +11,9 @@ namespace ConsoleApp_e_commerce
         public static List<Products> favoritesList = new List<Products>();
         public static Products products = new Products();
 
-        public static void FavoritesAdd()
+        static Favorites favorites = new Favorites();
+
+        public void FavoritesAdd()
         {
             Products products = new Products();
 
@@ -28,10 +30,10 @@ namespace ConsoleApp_e_commerce
                 Customer.DesiredID = favoritesList[i].ID;
                 products.FindingDesiredProduct();
             }
-            FavoritesDelete();
+            favorites.FavoritesDelete();
         }
 
-        public static void FavoritesDelete()
+        public void FavoritesDelete()
         {
             Console.WriteLine("If you want to remove it from favorites, enter the index value");
             //Favorilerden çıkarmak isterseniz index değeri girin

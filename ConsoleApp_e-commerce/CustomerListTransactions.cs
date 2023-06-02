@@ -23,11 +23,12 @@ namespace ConsoleApp_e_commerce
 
             if (transaction == 1)
             {
-                MyBasket.MyBasketAdd();
+                CustomerProductsTransacitons.productTransaction = new CustomerMyBasketAdd();
+                CustomerProductsTransacitons.productTransaction.Execute();
             }
             else if (transaction == 2)
             {
-                Favorites.FavoritesAdd();
+                CustomerProductsTransacitons.productTransaction.Execute();
             }
             else
             {

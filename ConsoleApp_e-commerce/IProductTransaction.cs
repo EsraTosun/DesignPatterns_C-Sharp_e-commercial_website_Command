@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_e_commerce
 {
-    interface ISellerProductTransaction
+    interface IProductTransaction
     {
         void Execute();   //Çalıştırma
 
