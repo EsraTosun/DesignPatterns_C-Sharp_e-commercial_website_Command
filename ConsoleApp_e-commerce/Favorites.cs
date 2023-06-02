@@ -12,6 +12,8 @@ namespace ConsoleApp_e_commerce
         public static Products products = new Products();
 
         static Favorites favorites = new Favorites();
+        public static Products transactionProduct = new Products();
+        public static int transactionIndex;
 
         public void FavoritesAdd()
         {
@@ -19,6 +21,7 @@ namespace ConsoleApp_e_commerce
 
             products.amount = Products.productList[Customer.transactionID - 1000].amount;
             products.ID = Customer.transactionID;
+            transactionIndex = favoritesList.Count;
 
             favoritesList.Add(products);
         }
@@ -30,19 +33,23 @@ namespace ConsoleApp_e_commerce
                 Customer.DesiredID = favoritesList[i].ID;
                 products.FindingDesiredProduct();
             }
-            favorites.FavoritesDelete();
         }
 
         public void FavoritesDelete()
         {
             Console.WriteLine("If you want to remove it from favorites, enter the index value");
             //Favorilerden çıkarmak isterseniz index değeri girin
-            Console.WriteLine("If you do not want enter the number -1");
-            //İstemezseniz-1 sayısını giriniz
             int transaction = Convert.ToInt32(Console.ReadLine());
 
-            if (transaction >= 0 && transaction < Favorites.favoritesList.Count)
-                Favorites.favoritesList.RemoveAt(transaction);
+            if (transaction >= 0 && transaction < MyBasket.myBasketList.Count)
+            {
+                transactionProduct = favoritesList[transaction];
+                favoritesList.RemoveAt(transaction);
+            }
+            else
+            {
+                throw new NotProductException();
+            }
         }
     }
 }

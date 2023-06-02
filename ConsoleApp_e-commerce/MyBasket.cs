@@ -13,7 +13,6 @@ namespace ConsoleApp_e_commerce
 
         public static MyBasket myBasket = new MyBasket();
         public static Products transactionProduct = new Products();
-
         public static int transactionIndex;
         public void MyBasketAdd()
         {
@@ -39,8 +38,6 @@ namespace ConsoleApp_e_commerce
         {
             Console.WriteLine("If you want to remove it from mybasket, enter the index value");
             //Favorilerden çıkarmak isterseniz index değeri girin
-            Console.WriteLine("If you do not want-enter the number -1");
-            //İstemezseniz -1 sayısını giriniz
             int transaction = Convert.ToInt32(Console.ReadLine());
 
             if (transaction >= 0 && transaction < MyBasket.myBasketList.Count)

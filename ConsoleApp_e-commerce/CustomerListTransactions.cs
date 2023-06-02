@@ -28,6 +28,7 @@ namespace ConsoleApp_e_commerce
             }
             else if (transaction == 2)
             {
+                CustomerProductsTransacitons.productTransaction = new CustomerFavoritesAdd();
                 CustomerProductsTransacitons.productTransaction.Execute();
             }
             else

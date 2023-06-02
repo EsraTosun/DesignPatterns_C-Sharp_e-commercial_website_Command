@@ -39,7 +39,7 @@ namespace ConsoleApp_e_commerce
 					customer.MyBaskets();
                     Console.WriteLine("If you want to remove it from mybasket, -1");
 					int transac = Convert.ToInt32(Console.ReadLine());	
-                    //Favorilerden çıkarmak isterseniz -1 girin
+                    //Sepetten çıkarmak isterseniz -1 girin
                     if (transac == -1)
 					{
                         productTransaction = new CustomerMyBasketDelete();
@@ -49,7 +49,15 @@ namespace ConsoleApp_e_commerce
 				else if (transaction == (int)CustomerAccountType.Favorites)
 				{
 					customer.Favoritess();
-				}
+                    Console.WriteLine("If you want to remove it from mybasket, -1");
+                    int transac = Convert.ToInt32(Console.ReadLine());
+                    //Favorilerden çıkarmak isterseniz -1 girin
+                    if (transac == -1)
+                    {
+                        productTransaction = new CustomerFavoritesDelete();
+                        productTransaction.Execute();
+                    }
+                }
                 else if (transaction == (int)CustomerAccountType.Payment)
                 {
 					if(User.login)

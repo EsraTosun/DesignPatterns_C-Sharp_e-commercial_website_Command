@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerFavoritesAdd.cs" />
+    <Compile Include="CustomerFavoritesDelete.cs" />
     <Compile Include="CustomerMyBasketAdd.cs" />
     <Compile Include="CustomerMyBasketDelete.cs" />
     <Compile Include="NotProductException.cs" />
