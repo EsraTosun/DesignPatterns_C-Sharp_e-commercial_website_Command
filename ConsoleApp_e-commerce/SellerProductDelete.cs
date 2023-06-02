@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_e_commerce
 {
-    class SellerProductDelete : ISellerProductTransaction
+    class SellerProductDelete : IProductTransaction
     {
         public static Products products = new Products();
         public static Seller seller = new Seller();

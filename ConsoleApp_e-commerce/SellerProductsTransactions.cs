@@ -10,7 +10,7 @@ namespace ConsoleApp_e_commerce
     {
         static Seller seller = new Seller();
         static User user = new User();
-        static ISellerProductTransaction productTransaction;
+        static IProductTransaction productTransaction;
 
         public static void SellerAccount()    //Satıcı Hesabı
         {
