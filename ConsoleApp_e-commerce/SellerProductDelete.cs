@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_e_commerce
 {
-    class SellerProductDelete : IProductTransaction
+    class SellerProductDelete : AbstractProductTransaction
     {
         public static Products products = new Products();
         public static Seller seller = new Seller();
 
-        public void Execute()
+        public override void Execute()
         {
             try
             {
@@ -23,7 +23,7 @@ namespace ConsoleApp_e_commerce
             }
         }
 
-        public void Undo()
+        public override void Undo()
         {
             Products.productList.Add(Products.transactionProtucts);
         }

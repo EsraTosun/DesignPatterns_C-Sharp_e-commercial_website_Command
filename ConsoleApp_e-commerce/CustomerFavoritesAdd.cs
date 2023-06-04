@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_e_commerce
 {
-    class CustomerFavoritesAdd : IProductTransaction
+    class CustomerFavoritesAdd : AbstractProductTransaction
     {
         public static Favorites favorites = new Favorites();
 
-        public void Execute()
+        public override void Execute()
         {
             favorites.FavoritesAdd();
         }
 
-        public void Undo()
+        public override void Undo()
         {
             try
             {

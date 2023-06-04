@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_e_commerce
 {
-    class CustomerFavoritesDelete : IProductTransaction
+    class CustomerFavoritesDelete : AbstractProductTransaction
     {
         public static Favorites favorites = new Favorites();
 
-        public void Execute()
+        public override void Execute()
         {
             try
             {
@@ -22,7 +22,7 @@ namespace ConsoleApp_e_commerce
             }
         }
 
-        public void Undo()
+        public override void Undo()
         {
             Favorites.favoritesList.Add(MyBasket.transactionProduct);
         }

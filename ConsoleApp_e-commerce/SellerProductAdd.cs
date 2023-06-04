@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_e_commerce
 {
-    class SellerProductAdd : IProductTransaction
+    class SellerProductAdd : AbstractProductTransaction
     {
         public static Products products = new Products();
 
-        public void Execute()
+        public override void Execute()
         {
             products.ProductAdd();
         }
 
-        public void Undo()
+        public override void Undo()
         {
             try
             {

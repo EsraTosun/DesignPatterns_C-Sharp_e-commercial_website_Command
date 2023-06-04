@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6DC30ED6-8646-4680-8CAC-A3F15F7C7F84}</ProjectGuid>
+    <ProjectGuid>{AFBC58C6-4BE6-42EA-B501-3E40CCE73653}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>ConsoleApp_e_commerce</RootNamespace>
     <AssemblyName>ConsoleApp_e-commerce</AssemblyName>
@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractProductTransaction.cs" />
     <Compile Include="CustomerFavoritesAdd.cs" />
     <Compile Include="CustomerFavoritesDelete.cs" />
     <Compile Include="CustomerMyBasketAdd.cs" />

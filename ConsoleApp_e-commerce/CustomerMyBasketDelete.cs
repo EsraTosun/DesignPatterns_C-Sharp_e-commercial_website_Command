@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_e_commerce
 {
-    class CustomerMyBasketDelete : IProductTransaction
+    class CustomerMyBasketDelete : AbstractProductTransaction
     {
         public static MyBasket myBasket = new MyBasket();
 
-        public void Execute()
+        public override void Execute()
         {
             try
             {
@@ -22,7 +22,7 @@ namespace ConsoleApp_e_commerce
             }
         }
 
-        public void Undo()
+        public override void Undo()
         {
             MyBasket.myBasketList.Add(MyBasket.transactionProduct);
         }

@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_e_commerce
 {
-    class CustomerMyBasketAdd : IProductTransaction
+    class CustomerMyBasketAdd : AbstractProductTransaction
     {
         public static MyBasket myBasket = new MyBasket();
 
-        public void Execute()
+        public override void Execute()
         {
             myBasket.MyBasketAdd();
         }
 
-        public void Undo()
+        public override void Undo()
         {
             try
             {
